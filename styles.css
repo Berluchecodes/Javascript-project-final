@@ -326,6 +326,30 @@ form {
 .movies {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.movies__loading--spinner {
+  font-size: 60px;
+  animation: spin 1s infinite linear;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
