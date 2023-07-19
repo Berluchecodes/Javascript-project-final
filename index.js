@@ -1,6 +1,6 @@
 // EXPLORE BTN
 function openLink() {
-    window.location.href = "https://your-website-url/movies.html";
+    window.location.href = "http://127.0.0.1:5500/movies.html?";
   }
 
 
