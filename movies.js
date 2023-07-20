@@ -50,10 +50,11 @@ async function fetchMovies(searchTerm) {
     const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`;
   
     try {
+      showLoadingSpinner() 
       const response = await fetch(url);
       const data = await response.json();
 
-      showLoadingSpinner() 
+      
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
