@@ -28,19 +28,21 @@ function toggleContrast() {
     }
 }
 
-// Function to show the loading spinner
 function showLoadingSpinner() {
   const loadingSpinner = document.getElementById("loading-spinner");
   loadingSpinner.style.display = "block";
 
-  const moviesContainer = document.getElementById("movie-container");
-  moviesContainer.innerHTML = ""; 
+  const moviesContainer = document.getElementById("movies-container");
+  moviesContainer.style.display = "none";
 }
 
 // Function to hide the loading spinner
 function hideLoadingSpinner() {
   const loadingSpinner = document.getElementById("loading-spinner");
   loadingSpinner.style.display = "none";
+
+  const moviesContainer = document.getElementById("movies-container");
+  moviesContainer.style.display = "block";
 }
 
 
@@ -76,7 +78,7 @@ async function fetchMovies(searchTerm) {
   
     movies.forEach((movie) => {
       const movieElement = document.createElement("div");
-      movieElement.classList.add("movie");
+      movieElement.classList.add("movie-container");
   
       movieElement.innerHTML = `
         <figure class="movie__poster--wrapper">
@@ -101,6 +103,8 @@ async function fetchMovies(searchTerm) {
     const searchTerm = searchInput.value.trim();
   
     if (searchTerm) {
+      const moviesContainer = document.getElementById("movies-container");
+      moviesContainer.style.display = "block";
       showLoadingSpinner();
       const movies = await fetchMovies(searchTerm);
       hideLoadingSpinner

@@ -329,10 +329,25 @@ form {
   
 }
 
-.spinner {
-  display: none;
-  
+#movies-container {
+  /* display: none; */
 }
+
+#loading-spinner {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.movies__loading--spinner {
+  font-size: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 #loading-spinner {
   font-size: 60px;
@@ -351,7 +366,7 @@ form {
 
 
 
-#movie-container {
+.movie__container {
   width: 20%;
   padding: 24px;
 }
