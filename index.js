@@ -1,6 +1,8 @@
 // EXPLORE BTN
 function openLink() {
-    window.location.origin = "https://berluchecodes.github.io/Javascript-project-final/";
+    
+window.location.origin = "http://127.0.0.1:5500"
+
   }
 
 
