@@ -103,7 +103,9 @@ async function fetchMovies(searchTerm) {
     if (searchTerm) {
       showLoadingSpinner();
       const movies = await fetchMovies(searchTerm);
+      hideLoadingSpinner
       displayMovies(movies);
+
     }
   });
 
