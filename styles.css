@@ -329,9 +329,9 @@ form {
   
 }
 
-#movies-container {
-  /* display: none; */
-}
+/* .movie__container {
+  display: none;
+} */
 
 #loading-spinner {
   text-align: center;
@@ -339,29 +339,14 @@ form {
 }
 
 .movies__loading--spinner {
-  font-size: 40px;
+  font-size: 60px;
   animation: spin 1s linear infinite;
+  
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-
-#loading-spinner {
-  font-size: 60px;
-  animation: spin 1s infinite linear;
-  display: none;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 

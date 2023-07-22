@@ -1,8 +1,7 @@
 // EXPLORE BTN
 function openLink() {
-    
-window.location.origin = "http://127.0.0.1:5500"
-
+    const url = `${window.location.origin}/movies.html`;
+    window.location.href = url;
   }
 
 

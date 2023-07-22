@@ -55,9 +55,6 @@ async function fetchMovies(searchTerm) {
       showLoadingSpinner() 
       const response = await fetch(url);
       const data = await response.json();
-
-      
-
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       hideLoadingSpinner();
