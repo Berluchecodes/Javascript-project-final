@@ -75,7 +75,7 @@ async function fetchMovies(searchTerm) {
   
     movies.forEach((movie) => {
       const movieElement = document.createElement("div");
-      movieElement.classList.add("movie-container");
+      movieElement.classList.add("movies-container");
   
       movieElement.innerHTML = `
         <figure class="movie__poster--wrapper">
