@@ -30,7 +30,7 @@ function toggleContrast() {
 
 function showLoadingSpinner() {
   const loadingSpinner = document.getElementById("loading-spinner");
-  loadingSpinner.style.display = "block";
+  loadingSpinner.style.display = "flex";
 
   const moviesContainer = document.getElementById("movies-container");
   moviesContainer.style.display = "none";
@@ -42,7 +42,7 @@ function hideLoadingSpinner() {
   loadingSpinner.style.display = "none";
 
   const moviesContainer = document.getElementById("movies-container");
-  moviesContainer.style.display = "block";
+  moviesContainer.style.display = "flex";
 }
 
 
@@ -55,7 +55,7 @@ async function fetchMovies(searchTerm) {
       showLoadingSpinner() 
       const response = await fetch(url);
       const data = await response.json();
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       hideLoadingSpinner();
   
@@ -70,13 +70,14 @@ async function fetchMovies(searchTerm) {
 
   // Function to display movies on the HTML page
   function displayMovies(movies) {
-    const moviesContainer = document.querySelector(".movies");
+    const moviesContainer = document.getElementById("movies-container");
     moviesContainer.innerHTML = "";
+
   
     movies.forEach((movie) => {
       const movieElement = document.createElement("div");
-      movieElement.classList.add("movies-container");
-  
+      movieElement.classList.add("movie__container"); 
+
       movieElement.innerHTML = `
         <figure class="movie__poster--wrapper">
           <img class="movie__poster" src="${movie.Poster}" alt="" />
@@ -88,6 +89,10 @@ async function fetchMovies(searchTerm) {
       `;
   
       moviesContainer.appendChild(movieElement);
+
+      // Update the heading text after search
+  const heading = document.querySelector(".featured__title");
+  heading.textContent = "Your Search Results";
     });
   }
   

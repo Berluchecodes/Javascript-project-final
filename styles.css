@@ -329,21 +329,16 @@ form {
   
 }
 
-#movies__container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 
 #loading-spinner {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
  
 }
 
-#loading-spinner .spinner {
-  display: none;
-}
+
 
 .movies__loading--spinner {
   font-size: 80px;
@@ -359,10 +354,12 @@ form {
 
 
 
-.movie__container {
+.movie__container
+ {
   width: 20%;
   padding: 24px;
 }
+
 
 .movie__poster {
   max-height: 380px;
@@ -531,7 +528,7 @@ RESPONSIVE
   }
 
 
-  .movie {
+  .movie__container {
     width: 50%;
   }
 
